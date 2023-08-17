@@ -10,7 +10,7 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.callbacks import get_openai_callback
 import os
 import pickle
-
+from PIL import Image
 
 with st.sidebar:
     st.title("LLM Chat App")
@@ -28,7 +28,8 @@ with st.sidebar:
 load_dotenv()
 
 def main():
-    st.header("Chat with PDF 💬")
+    image = Image.open('chatPDF.png')
+    st.image(image,width=350)
     pdf = st.file_uploader("Upload Your File", type='pdf')
     if pdf is not None:
         pdf_reader = PdfReader(pdf)
