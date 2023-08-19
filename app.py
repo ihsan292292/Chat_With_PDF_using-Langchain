@@ -25,9 +25,10 @@ with st.sidebar:
     add_vertical_space(5)
     st.write('Made by [Ihsan](https://github.com/ihsan292292/Chat_With_PDF_using-Langchain)')
     
-load_dotenv()
+
 
 def main():
+    load_dotenv()
     image = Image.open('chatPDF.png')
     st.image(image,width=350)
     pdf = st.file_uploader("Upload Your File", type='pdf')
