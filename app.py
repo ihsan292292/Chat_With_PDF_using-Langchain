@@ -68,8 +68,8 @@ def main():
         
         if query:
             docs = VectorStore.similarity_search(query=query, k=2)
-            repo_id = "tiiuae/falcon-7b-instruct"
-            llm = HuggingFaceHub(repo_id=repo_id, model_kwargs={"temperature": 0.1, "max_new_tokens": 500})
+            repo_id = "google/flan-t5-xxl"
+            llm = HuggingFaceHub(repo_id=repo_id, model_kwargs={"temperature": 0.5, "max_length": 64})
             chain = load_qa_chain(llm=llm,chain_type="stuff")
             with get_openai_callback() as cb:
                 response = chain.run(input_documents=docs, question=query)
