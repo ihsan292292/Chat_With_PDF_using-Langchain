@@ -21,7 +21,7 @@ with st.sidebar:
                 this app is build using:
                 - [Streamlit](https://streamlit.io/)
                 - [LangChain](https://python.langchain.com/)
-                - [OpenAI](https://platform.openai.com/docs/models) LLM model
+                - [HuggingFace](https:https://huggingface.co/) LLM model
  
                 ''')
     add_vertical_space(5)
